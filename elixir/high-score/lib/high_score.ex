@@ -1,25 +1,22 @@
 defmodule HighScore do
-  def new() do
-    # Please implement the new/0 function
-  end
+  @score 0
 
-  def add_player(scores, name, score) do
-    # Please implement the add_player/3 function
-  end
+  @spec new() :: map
+  def new(), do: %{}
 
-  def remove_player(scores, name) do
-    # Please implement the remove_player/2 function
-  end
+  @spec add_player(scores :: map, name :: String.t(), score :: integer) :: map
+  def add_player(scores, name, score \\ @score), do: Map.put(scores, name, score)
 
-  def reset_score(scores, name) do
-    # Please implement the reset_score/2 function
-  end
+  @spec remove_player(scores :: map, name :: String.t()) :: map
+  def remove_player(scores, name), do: Map.delete(scores, name)
 
-  def update_score(scores, name, score) do
-    # Please implement the update_score/3 function
-  end
+  @spec reset_score(scores :: map, name :: String.t()) :: map
+  def reset_score(scores, name), do: Map.put(scores, name, @score)
 
-  def get_players(scores) do
-    # Please implement the get_players/1 function
-  end
+  @spec update_score(scores :: map, name :: String.t(), score :: integer) :: map
+  def update_score(scores, name, score \\ @score),
+    do: Map.update(scores, name, score, &(&1 + score))
+
+  @spec get_players(scores :: map) :: list(String.t())
+  def get_players(scores), do: Map.keys(scores)
 end
