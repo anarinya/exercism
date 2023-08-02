@@ -129,5 +129,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-.yarn/
-.exercism/
+.yarn/*
+.yarn/cache/*
+.exercism/*
