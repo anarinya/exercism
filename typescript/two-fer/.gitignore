@@ -132,3 +132,11 @@ dist
 .yarn/*
 .yarn/cache/*
 .exercism/*
+
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
