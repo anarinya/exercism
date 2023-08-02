@@ -130,4 +130,5 @@ dist
 .pnp.*
 
 .yarn/*
+.yarn/cache/*
 .exercism/*
